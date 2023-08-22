@@ -1,0 +1,28 @@
+.input_wrapper {
+  margin-top: 171px;
+  margin-right: 152px;
+  &-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+  &-label {
+    display: flex;
+    input {
+      width: 524px;
+      height: 96px;
+      outline: none;
+      border: none;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      padding-left: 16px;
+    }
+    button {
+      height: 98px;
+      width: 98px;
+      background-color: #F8D231;
+      border: none;
+    }
+  }
+}

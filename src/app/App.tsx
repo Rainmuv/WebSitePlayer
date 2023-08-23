@@ -1,11 +1,11 @@
 import './App.scss';
-import { Header } from '../components/Header/Header';
+import { Input } from '../components/Input/Input';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <>
+      <Input/>
+    </>
   );
 }
 

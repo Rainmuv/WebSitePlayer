@@ -10,34 +10,101 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="./style.scss">
+    <title>React Audio</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <div class="container">
+        <div class="header">
+          <div class='header_wrapper'>
+            <div class='header_wrapper__text'>
+              <h1 class='header_wrapper__text_title' >Play any audio sources directly in the browser!</h1>
+              <p class='header_wrapper__text_subtitle'>Without any restrictions for free</p>
+              <p class='header_wrapper__text_descr'>By uploading the audio file, you agree to our <span className='wrapper_descr-span'>Terms of Service.</span></p>
+            </div>
+          </div>
+          <div id="root"></div>
+        </div>
+      </div>
+      <div class="descr">
+        <div class="container">
+          <div class="descr_wrapper">
+            <div class="descr_wrapper-text">
+              <h2 class="descr_wrapper-text--title" >How It Works</h2>
+              <p class="descr_wrapper-text--subtitle">Lorem Ipsum is a "fish" text often used in print and web design. Lorem Ipsum has been the standard "fish" for Latin texts since the early 16th century. At that time, an unnamed printer created a large collection of font sizes and shapes, using Lorem Ipsum for print samples.</p>
+            </div>
+            <div class="descr_wrapper-img">
+              <img src="./Illustration.svg" alt="#descr_info">
+            </div>
+          </div>
+          <div class="descr_info">
+            <h2 class="descr_info-title" >Technical requirements</h2>
+            <div class="descr_info-wrapper">
+                <ul class="descr_info-wrapper__text">
+                  <li class="descr_info-wrapper__text-li active" >Own server</li>
+                  <li class="descr_info-wrapper__text-li" >Amazon Instance</li>
+                </ul>
+              <div class="all" >
+                <div class="descr_info-wrapper__requirements">
+                  <ul>
+                    <li>
+                      <p>OS + apps</p>
+                      <p>Unix/OSX + docker + nvidia-docker</p>
+                    </li>
+                    <li>
+                      <p>CPU</p>
+                      <p>4 cores or more (e.g. intel core i5)</p>
+                    </li>
+                    <li>
+                      <p>Memory</p>
+                      <p>16 GB RAM</p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p>Free space</p>
+                      <p>100 GB of free space</p>
+                    </li>
+                    <li>
+                      <p>Graphics hardware</p>
+                      <p>GPU: NVidia only 2Gb+</p>
+                    </li>
+                </ul>
+                </div>
+              </div>
+              <div class="all opacify">
+                <div class="descr_info-wrapper__requirements">
+                  <ul>
+                    <li>
+                      <p>Instance</p>
+                      <p>g4dn.xlarge</p>
+                    </li>
+                    <li>
+                      <p>GPU</p>
+                      <p>1</p>
+                    </li>
+                    <li>
+                      <p>vCPUs</p>
+                      <p>4</p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p>Memory</p>
+                      <p>16 GB RAM</p>
+                    </li>
+                    <li>
+                      <p>Storage</p>
+                      <p>125 GB</p>
+                    </li>
+                  </ul> 
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./index.js" ></script>
   </body>
 </html>

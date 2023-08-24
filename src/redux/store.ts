@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import InputSlice from './slices/InputSlice';
-import SystemInfoSlice from './slices/SystemInfoSlice';
+import TageAudioSlice from './slices/TageAudioSlice';
 
 export const store = configureStore({
   reducer: {
     InputSlice,
-    SystemInfoSlice
+    TageAudioSlice
   },
 })
 

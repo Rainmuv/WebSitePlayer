@@ -1,15 +1,16 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { useSelector, useDispatch } from 'react-redux'
+import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store';
 
 type Initial = {
   states: boolean
   errMes: boolean
+  local: boolean
 }
 
 const initialState: Initial = {
   states: true,
-  errMes: false
+  errMes: false,
+  local: false
 }
 
 export const inputSlice = createSlice({
@@ -21,12 +22,15 @@ export const inputSlice = createSlice({
     },
     errorMesege(state, action) {
       state.errMes = action.payload
+    },
+    LocalStore(state) {
+      state.local = !state.local
     }
   }
 })
 
 export const selectInput = (state: RootState) => state.InputSlice
 
-export const { reverseState, errorMesege } = inputSlice.actions
+export const { reverseState, errorMesege, LocalStore } = inputSlice.actions
 
 export default inputSlice.reducer

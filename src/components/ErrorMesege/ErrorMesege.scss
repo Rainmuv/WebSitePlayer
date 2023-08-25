@@ -1,0 +1,30 @@
+.error {
+  position: absolute;
+  width: 618px;
+  height: 43px;
+  display: flex;
+  padding: 20px;
+  background-color: #FFFFFF;
+  top: 8px;
+  left: 630px;
+  align-items: center;
+  &-imgErr {
+    margin-right: 12px;
+    width: 39px;
+    height: 39px;
+  }
+  &-imgClose {
+    cursor: pointer;
+  }
+  &-text {
+    margin-right: 380px;
+    &_title {
+      font-size: 15px;
+      font-weight: 800;
+    }
+    &_subtitle {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+}

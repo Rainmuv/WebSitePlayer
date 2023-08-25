@@ -12,11 +12,11 @@ export const TageAudio = () => {
     audioObj.addEventListener('error', () => {
       dispatch(errorMesege(true))
       dispatch(reverseState())
-    })
+    }) 
   }, [audioObj])
 
   return (
-      <audio controls preload='auto' >
+      <audio controls={true} preload='auto' >
         <source src={`${states}`} type='audio/mpeg'/>
       </audio>
   )

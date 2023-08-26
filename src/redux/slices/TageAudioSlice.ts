@@ -3,10 +3,14 @@ import { RootState } from '../store';
 
 type Initial = {
   states: string
+  paPl: boolean
+  widthOfDuration: number
 }
 
 const initialState: Initial = {
-  states: ''
+  states: '',
+  paPl: false,
+  widthOfDuration: 0
 }
 
 export const TageAudio = createSlice({
@@ -18,12 +22,18 @@ export const TageAudio = createSlice({
     },
     sendLocal(state, action) {
       state.states = action.payload
-    }
+    },
+    revPaPl(state, action) {
+      state.paPl = action.payload
+    },
+    setWidthOfDuration: (state, action) => {
+      state.widthOfDuration = action.payload
+    },
   }
 })
 
 export const selectAudio = (state: RootState) => state.TageAudioSlice
 
-export const { sendLink, sendLocal } = TageAudio.actions
+export const { sendLink, sendLocal, revPaPl, setWidthOfDuration } = TageAudio.actions
 
 export default TageAudio.reducer

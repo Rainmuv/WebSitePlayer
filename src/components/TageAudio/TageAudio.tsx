@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { FC, MutableRefObject } from 'react'
 
-import { selectAudio } from '../../redux/slices/TageAudioSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { errorMesege, reverseState } from '../../redux/slices/InputSlice'
 
-export const TageAudio = () => {
+import './TageAudio.scss'
+
+interface TageAudioTp {
+  states: string
+  audioRef: MutableRefObject<HTMLAudioElement>
+}
+
+export const TageAudio: FC<TageAudioTp> = ({states,  audioRef }) => {
   const dispatch = useDispatch()
-  const { states } = useSelector(selectAudio)
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const audioObj = new Audio(states)
   React.useEffect(() => {
     audioObj.addEventListener('error', () => {
       dispatch(errorMesege(true))
       dispatch(reverseState())
     }) 
-  }, [audioObj])
-
+  }, [audioObj, dispatch])
+  
   return (
-      <audio controls={true} preload='auto' >
+      <audio ref={audioRef} preload='auto' >
         <source src={`${states}`} type='audio/mpeg'/>
       </audio>
   )

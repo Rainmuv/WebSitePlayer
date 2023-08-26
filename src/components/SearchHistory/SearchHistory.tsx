@@ -10,8 +10,8 @@ export const SearchHistory: FC = () => {
   const dispatch = useDispatch()
   const getHistoryString = window.localStorage.getItem('searchHistory');
   const arrayOfHistoryUsersLinks = getHistoryString !== null ? JSON.parse(getHistoryString) : [];
-  function onClickList(props: any) {
-    dispatch(sendLocal(props))
+  function onClickList(element: string) {
+    dispatch(sendLocal(element))
     dispatch(reverseState())
     dispatch(errorMesege(false))
   }
@@ -21,7 +21,6 @@ export const SearchHistory: FC = () => {
         <ul className='history-localList'>
             {arrayOfHistoryUsersLinks.map((element: string, index: number) => (
                 <li 
-                    //@ts-ignore
                     onClick={() => onClickList(element)}
                     key={index}
                     className='history-localuser_link'>

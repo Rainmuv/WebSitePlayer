@@ -16,6 +16,7 @@ export const Input: FC = () => {
   const { local } = useSelector(selectInput)
 
   function onClickBtn() {
+     
     if(stateInpRef.current.value.includes('https://')) {
       dispatch(sendLink(stateInpRef.current.value))
       LocalStorage(stateInpRef.current.value)
@@ -33,12 +34,12 @@ export const Input: FC = () => {
   return (
     <div className='input_wrapper'>
       <p className='input_wrapper-title' >Insert the link</p>
-      <div className='input_wrapper-label' >
+      <form className='input_wrapper-label' >
         <input onClick={onClickInp} ref={stateInpRef} type="text" placeholder='https://' />
         <button onClick={onClickBtn} >
           <img src={svgButton} alt="#awwdad" />
         </button>
-      </div>
+      </form>
       { local && <SearchHistory/>}
     </div>
   )

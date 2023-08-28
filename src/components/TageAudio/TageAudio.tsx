@@ -3,8 +3,6 @@ import React, { FC, MutableRefObject } from 'react'
 import { useDispatch } from 'react-redux'
 import { errorMesege, reverseState } from '../../redux/slices/InputSlice'
 
-import './TageAudio.scss'
-
 interface TageAudioTp {
   states: string
   audioRef: MutableRefObject<HTMLAudioElement>

@@ -1,9 +1,11 @@
 .input_wrapper {
-  position: relative;
+  margin-top: 130px;
+  margin-left: 130px;
   &-title {
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
+    margin-bottom: 20px;
   }
   &-label {
     display: flex;

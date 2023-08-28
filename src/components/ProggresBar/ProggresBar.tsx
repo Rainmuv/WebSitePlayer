@@ -1,6 +1,7 @@
 import React, {RefObject, MouseEvent, FC, MutableRefObject} from 'react'
 import { selectAudio } from '../../redux/slices/TageAudioSlice'
-import { useAppSelector } from '../../redux/store'
+import { useAppSelector } from '../../redux/store';
+import './ProggresBar.scss'
 
 interface progressIP {
     progressBar: RefObject<HTMLDivElement>,

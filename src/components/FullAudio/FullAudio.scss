@@ -4,4 +4,18 @@
   font-weight: 400;
   line-height: 32px;
   color: #1B191C;
+  margin-bottom: 20px;
 }
+
+.full-audio {
+  margin-top: 80px;
+  margin-left: 100px;
+  &-wrapper {
+    padding: 20px;
+    width: 520px;
+    height: 158px;
+    background-color: #CFD3D6;
+  }
+}
+
+

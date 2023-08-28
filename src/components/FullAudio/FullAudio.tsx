@@ -6,7 +6,7 @@ import { TageAudio } from '../TageAudio/TageAudio'
 import { reverseState } from '../../redux/slices/InputSlice'
 import { ButtonPP } from '../ButtonPP/ButtonPP'
 import { ProgressBar } from '../ProggresBar/ProggresBar'
-import { VolumeAudio } from '../VolumeAudio/VolumeAudio'
+import { TimeAndVoleme } from '../TimeAndVoleme/TimeAndVoleme'
 
 
 import './FullAudio.scss'
@@ -22,24 +22,27 @@ export const FullAudio = () => {
   const progressBar = React.useRef<HTMLDivElement>(null)
 
   return (
-    <div>
-      <p className='btn-back' onClick={onClickButton}>← Back</p>
-      <ButtonPP 
-        audioRef={audioRef} 
-        paPl={paPl} 
-      />
-      <ProgressBar
-        progressed={progressed}
-        progressBar={progressBar}
-        audioRef={audioRef}
-      />
-      <VolumeAudio 
-        audioRef={audioRef}
-      />
-      <TageAudio
-        states={states}
-        audioRef={audioRef}
-      />
+    <div className='full-audio'>
+    <p className='btn-back' onClick={onClickButton}>← Back</p>
+      <div className='full-audio-wrapper'>
+        <ButtonPP 
+          audioRef={audioRef} 
+          paPl={paPl} 
+        />
+        <ProgressBar
+          progressed={progressed}
+          progressBar={progressBar}
+          audioRef={audioRef}
+        />
+        <TimeAndVoleme 
+          audioRef={audioRef}
+        />
+        <TageAudio
+          states={states}
+          audioRef={audioRef}
+        />
+      </div>
     </div>
+    
   )
 }

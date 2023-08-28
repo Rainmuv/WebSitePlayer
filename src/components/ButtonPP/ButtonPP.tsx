@@ -1,7 +1,7 @@
 import React, {FC, MutableRefObject} from 'react'
 
 import { useDispatch } from 'react-redux'
-import { setWidthOfDuration, revPaPl } from '../../redux/slices/TageAudioSlice';
+import { setWidthOfDuration, revPaPl, setMinutes, setSeconds } from '../../redux/slices/TageAudioSlice';
 
 import iconPause from '../../assets/Pause.svg';
 import iconPlay from '../../assets/Play.svg'
@@ -15,7 +15,11 @@ export const ButtonPP: FC<ButtonPPTP> = ({audioRef, paPl}) => {
   const dispatch = useDispatch()
   const duration = () => {
     const currTime = Math.floor(audioRef.current.currentTime)
+    const minute = Math.floor(currTime / 60)
+    const second = currTime % 60
     const width = Math.floor(currTime * 100 / audioRef.current.duration)
+    dispatch(setMinutes(minute))
+    dispatch(setSeconds(second))
     dispatch(setWidthOfDuration(width))
 }
 

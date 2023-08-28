@@ -5,12 +5,16 @@ type Initial = {
   states: string
   paPl: boolean
   widthOfDuration: number
+  minutes: number
+  seconds: number
 }
 
 const initialState: Initial = {
   states: '',
   paPl: false,
-  widthOfDuration: 0
+  widthOfDuration: 0,
+  minutes: 0,
+  seconds: 0
 }
 
 export const TageAudio = createSlice({
@@ -29,11 +33,17 @@ export const TageAudio = createSlice({
     setWidthOfDuration: (state, action) => {
       state.widthOfDuration = action.payload
     },
+    setMinutes: (state, action) => {
+      state.minutes = action.payload
+    },
+    setSeconds: (state, action) => {
+        state.seconds = action.payload
+    }
   }
 })
 
 export const selectAudio = (state: RootState) => state.TageAudioSlice
 
-export const { sendLink, sendLocal, revPaPl, setWidthOfDuration } = TageAudio.actions
+export const { sendLink, sendLocal, revPaPl, setWidthOfDuration, setMinutes, setSeconds } = TageAudio.actions
 
 export default TageAudio.reducer

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store';
 
-type Initial = {
+interface Initial  {
   states: boolean
   errMes: boolean
   local: boolean

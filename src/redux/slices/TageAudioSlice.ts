@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store';
 
-type Initial = {
+interface Initial  {
   states: string
-  paPl: boolean
+  PauseAndPlay: boolean
   widthOfDuration: number
   minutes: number
   seconds: number
@@ -11,7 +11,7 @@ type Initial = {
 
 const initialState: Initial = {
   states: '',
-  paPl: false,
+  PauseAndPlay: false,
   widthOfDuration: 0,
   minutes: 0,
   seconds: 0
@@ -27,8 +27,8 @@ export const TageAudio = createSlice({
     sendLocal(state, action) {
       state.states = action.payload
     },
-    revPaPl(state, action) {
-      state.paPl = action.payload
+    reversePauseAndPlay(state, action) {
+      state.PauseAndPlay = action.payload
     },
     setWidthOfDuration: (state, action) => {
       state.widthOfDuration = action.payload
@@ -44,6 +44,6 @@ export const TageAudio = createSlice({
 
 export const selectAudio = (state: RootState) => state.TageAudioSlice
 
-export const { sendLink, sendLocal, revPaPl, setWidthOfDuration, setMinutes, setSeconds } = TageAudio.actions
+export const { sendLink, sendLocal, reversePauseAndPlay, setWidthOfDuration, setMinutes, setSeconds } = TageAudio.actions
 
 export default TageAudio.reducer

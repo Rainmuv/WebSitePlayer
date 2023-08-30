@@ -1,25 +1,22 @@
-import React, { MutableRefObject } from 'react'
-import { selectAudio } from '../../redux/slices/TageAudioSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { MutableRefObject, useRef } from 'react'
 
-import { TageAudio } from '../TageAudio/TageAudio'
+import { ButtonPP, ProgressBar, TimeAndVoleme, TageAudio } from '../imports'
+
+
+import { useDispatch } from 'react-redux'
 import { reverseState } from '../../redux/slices/InputSlice'
-import { ButtonPP } from '../ButtonPP/ButtonPP'
-import { ProgressBar } from '../ProggresBar/ProggresBar'
-import { TimeAndVoleme } from '../TimeAndVoleme/TimeAndVoleme'
-
 
 import './FullAudio.scss'
+
 export const FullAudio = () => {
   const dispatch = useDispatch()
   function onClickButton() {
     dispatch(reverseState())
   }
   
-  const { states, paPl } = useSelector(selectAudio)
-  const audioRef = React.useRef() as MutableRefObject<HTMLAudioElement>
-  const progressed = React.useRef<HTMLDivElement>(null)
-  const progressBar = React.useRef<HTMLDivElement>(null)
+  const audioRef = useRef() as MutableRefObject<HTMLAudioElement>
+  const progressed = useRef<HTMLDivElement>(null)
+  const progressBar = useRef<HTMLDivElement>(null)
 
   return (
     <div className='full-audio'>
@@ -27,7 +24,6 @@ export const FullAudio = () => {
       <div className='full-audio-wrapper'>
         <ButtonPP 
           audioRef={audioRef} 
-          paPl={paPl} 
         />
         <ProgressBar
           progressed={progressed}
@@ -38,7 +34,6 @@ export const FullAudio = () => {
           audioRef={audioRef}
         />
         <TageAudio
-          states={states}
           audioRef={audioRef}
         />
       </div>

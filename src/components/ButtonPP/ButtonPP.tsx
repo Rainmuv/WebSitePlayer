@@ -1,17 +1,20 @@
 import React, {FC, MutableRefObject} from 'react'
 
-import { useDispatch } from 'react-redux'
-import { setWidthOfDuration, revPaPl, setMinutes, setSeconds } from '../../redux/slices/TageAudioSlice';
+import { setWidthOfDuration, reversePauseAndPlay, setMinutes, setSeconds } from '../../redux/slices/TageAudioSlice';
+
+import { selectAudio } from '../../redux/slices/TageAudioSlice';
+import { useDispatch, useSelector } from 'react-redux'
+
 
 import iconPause from '../../assets/Pause.svg';
 import iconPlay from '../../assets/Play.svg'
 
 interface ButtonPPTP  {
   audioRef: MutableRefObject<HTMLAudioElement>,
-  paPl: boolean,
 }
 
-export const ButtonPP: FC<ButtonPPTP> = ({audioRef, paPl}) => {
+export const ButtonPP: FC<ButtonPPTP> = ({audioRef}) => {
+  const { PauseAndPlay } = useSelector(selectAudio)
   const dispatch = useDispatch()
   const duration = () => {
     const currTime = Math.floor(audioRef.current.currentTime)
@@ -23,19 +26,19 @@ export const ButtonPP: FC<ButtonPPTP> = ({audioRef, paPl}) => {
     dispatch(setWidthOfDuration(width))
 }
 
-  function onClickBtnPause() {
+  const onClickBtnPause = () => {
     audioRef.current.ontimeupdate = duration
     audioRef.current.pause()
-    dispatch(revPaPl(false))
+    dispatch(reversePauseAndPlay(false))
   }
 
-  function onClickBtnPlay() {
+  const onClickBtnPlay = () => {
     audioRef.current.ontimeupdate = duration
     audioRef.current.play()
-    dispatch(revPaPl(true))
+    dispatch(reversePauseAndPlay(true))
   }
 
   return (
-      <img onClick={() => paPl ? onClickBtnPause() : onClickBtnPlay()} src={paPl ? iconPause : iconPlay} alt="#534141" />
+      <img onClick={() => PauseAndPlay ? onClickBtnPause() : onClickBtnPlay()} src={PauseAndPlay ? iconPause : iconPlay} alt="Button" />
   )
 }

@@ -1,13 +1,16 @@
 import React, { MutableRefObject, FC } from 'react';
-import './Input.scss'
-import svgButton from '../../assets/Union.svg'
+
+
+import { SearchHistory } from '../imports';
+import { LocalStorage } from '../../LocalStorage/LocalStorage';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { sendLink } from '../../redux/slices/TageAudioSlice';
 import { reverseState, LocalStore, selectInput } from '../../redux/slices/InputSlice';
 import { errorMesege } from '../../redux/slices/InputSlice';
-import { LocalStorage } from '../../LocalStorage/LocalStorage';
-import { SearchHistory } from '../SearchHistory/SearchHistory';
 
+import svgButton from '../../assets/Union.svg'
+import './Input.scss'
 
 
 export const Input: FC = () => {
@@ -15,8 +18,7 @@ export const Input: FC = () => {
   const dispatch = useDispatch()
   const { local } = useSelector(selectInput)
 
-  function onClickBtn() {
-     
+  const onClickBtn = () => {
     if(stateInpRef.current.value.includes('https://')) {
       dispatch(sendLink(stateInpRef.current.value))
       LocalStorage(stateInpRef.current.value)
@@ -27,7 +29,7 @@ export const Input: FC = () => {
     }
   }
 
-  function onClickInp() {
+  const onClickInp = () => {
     dispatch(LocalStore())
   }
  

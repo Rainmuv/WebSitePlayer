@@ -1,5 +1,5 @@
 .error {
-  position: absolute;
+  position: fixed;
   width: 618px;
   height: 43px;
   display: flex;
@@ -15,9 +15,10 @@
   }
   &-imgClose {
     cursor: pointer;
+    margin-left: 380px;
   }
   &-text {
-    margin-right: 380px;
+    
     &_title {
       font-size: 15px;
       font-weight: 800;
@@ -28,3 +29,62 @@
     }
   }
 }
+
+@media(max-width: 1440px) {
+  .error {
+    left: 395px;
+  }
+}
+@media(max-width: 1024px) {
+  .error {
+    left: 188px;
+  }
+}
+@media(max-width: 768px) {
+  .error {
+    left: 60px;
+  }
+}
+@media(max-width: 425px) {
+  .error {
+    left: 17px;
+    width: 350px;
+    &-imgErr {
+      margin-right: 6px;
+      width: 39px;
+      height: 39px;
+    }
+    &-imgClose {
+      margin-left: 160px;
+    }
+  }
+}
+@media(max-width: 375px) {
+  .error {
+    left: 17px;
+    width: 300px;
+    &-imgErr {
+      margin-right: 6px;
+      width: 30px;
+      height: 30px;
+    }
+    &-imgClose {
+      margin-left: 150px;
+    }
+  }
+}
+@media(max-width: 320px) {
+  .error {
+    left: 17px;
+    width: 250px;
+    &-imgErr {
+      margin-right: 6px;
+      width: 30px;
+      height: 30px;
+    }
+    &-imgClose {
+      margin-left: 130px;
+    }
+  }
+}
+

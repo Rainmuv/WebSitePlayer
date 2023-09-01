@@ -20,7 +20,7 @@ export const TimeAndVoleme: FC<TimeAndVolemeTp> = ({audioRef}) => {
         <p>{minutes < 10 ? `0${minutes}` : minutes}:</p>
         <p>{seconds < 10 ? `0${seconds}` : seconds}</p>
       </div>
-      <input className='VolumeInp' onClick={() => setVolume()} ref={paramVolume} type="range" />
+      <input className='VolumeInp' onChange={() => setVolume()} ref={paramVolume} type="range" />
     </div>
     
   )

@@ -43,3 +43,8 @@ height: 7px;
 background-color: #FFFFFF;
 }
 
+@media(max-width: 375px) {
+  .VolumeInp[type=range] {
+    width: 170px;
+  }
+}

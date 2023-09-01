@@ -5,7 +5,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #A4A3A4;
-  font-family: Space Grotesk;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
@@ -17,12 +16,40 @@
 .history-localList{
   display: flex;
   flex-direction: column;
-  width: 84.6%;
+  justify-content: center;
+  width: 540px;
   padding-left: 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.20);
   background: #FFF;
   position: absolute;
 }
 .history{
-position: relative;
+  position: relative;
+  margin-left: 309px;
+}
+
+@media(max-width: 1024px) {
+  .history{
+    margin-left: 31px;
+  }
+}
+@media(max-width: 768px) {
+  .history{
+    margin-left: 0px;
+  }
+  .history-localList {
+    width: 525px;
+  }
+}
+
+@media(max-width: 425px) {
+  .history-localList {
+    width: 287px;
+  }
+}
+
+@media(max-width: 375px) {
+  .history-localList {
+    width: 246px;
+  }
 }

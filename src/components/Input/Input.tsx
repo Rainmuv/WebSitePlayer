@@ -36,13 +36,14 @@ export const Input: FC = () => {
   return (
     <div className='input_wrapper'>
       <p className='input_wrapper-title' >Insert the link</p>
-      <form className='input_wrapper-label' >
-        <input onClick={onClickInp} ref={stateInpRef} type="text" placeholder='https://' />
-        <button onClick={onClickBtn} >
-          <img src={svgButton} alt="#awwdad" />
-        </button>
-      </form>
-      { local && <SearchHistory/>}
+
+        <form onClick={(e) => e.preventDefault()} className='input_wrapper-label' >
+          <input onClick={onClickInp} ref={stateInpRef} type="text" placeholder='https://' />
+          <button onClick={onClickBtn} >
+            <img src={svgButton} alt="#awwdad" /> 
+          </button>
+        </form>
+        { local && <SearchHistory/>}
     </div>
   )
 }

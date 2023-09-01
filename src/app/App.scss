@@ -8,8 +8,11 @@
   margin: 0 auto;
 }
 
-body {
-  background-color: #EEEEEE;
+.img-back {
+  background-image: url('../assets/gitar.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 * {
@@ -26,4 +29,31 @@ body {
 .opacify {
   display: none;
 }
+
+@media(max-width: 1024px) {
+  .container {
+    width: 780px;
+  }
+}
+@media(max-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+@media(max-width: 425px) {
+  .container {
+    width: 400px;
+  }
+}
+@media(max-width: 375px) {
+  .container {
+    width: 350px;
+  }
+}
+@media(max-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
+
 

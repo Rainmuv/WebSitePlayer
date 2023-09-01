@@ -23,3 +23,16 @@
   border-radius: 6px;
   background-color: #FFF;
 }
+
+@media(max-width: 425px) {
+  .progress_bar {
+    width: 260px;
+  }
+}
+
+@media(max-width: 375px) {
+  .progress_bar {
+    width: 210px;
+  }
+}
+

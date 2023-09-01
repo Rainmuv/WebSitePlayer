@@ -3,13 +3,13 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
-  color: #1B191C;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 .full-audio {
-  margin-top: 80px;
-  margin-left: 100px;
+  margin-top: 60px;
+  margin-left: 350px;
   &-wrapper {
     padding: 20px;
     width: 520px;
@@ -18,4 +18,35 @@
   }
 }
 
+@media(max-width: 1024px) {
+  .full-audio {
+    margin-left: 75px;
+  }
+}
+@media(max-width: 768px) {
+  .full-audio {
+    margin-left: 35px;
+  }
+}
+@media(max-width: 425px) {
+  .full-audio {
+    margin-left: 9px;
+    &-wrapper {
+      width: 300px;
+    }
+  }
+}
+@media(max-width: 375px) {
+  .full-audio {
+    margin-left: 9px;
+    &-wrapper {
+      width: 250px;
+    }
+  }
+}
+@media(max-width: 320px) {
+  .full-audio {
+    margin-left: 5px;
+  }
+}
 

@@ -46,3 +46,20 @@
   }
 }
 
+@media(max-width: 1024px) {
+  .descr_info-wrapper__requirements li {
+    display: block;
+    p {
+      padding-bottom: 5px;
+    }
+  }
+}
+@media(max-width: 425px) {
+  .descr_info-wrapper__requirements { 
+    display: block;
+    ul {
+    margin-bottom: 40px;
+    }
+  }
+}
+

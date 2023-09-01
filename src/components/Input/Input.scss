@@ -1,17 +1,25 @@
 .input_wrapper {
-  margin-top: 130px;
-  margin-left: 130px;
+  margin-top: 60px;
+  text-align: center;
+  margin-bottom: 100px;
   &-title {
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
     margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 0 2px #000000,
+                                0 2px 2px #000000, 
+                                -2px 0 2px #000000, 
+                                0 -2px 2px #000000;
   }
+  
   &-label {
     display: flex;
+    justify-content: center;
     input {
       width: 524px;
-      height: 96px;
+      height: 98px;
       outline: none;
       border: none;
       font-size: 24px;
@@ -24,6 +32,39 @@
       width: 98px;
       background-color: #F8D231;
       border: none;
+      &:hover {
+        transition: all 0.3s;
+        background-color: #d8b722;
+      }
+    }
+  }
+}
+
+@media(max-width: 425px) {
+  .input_wrapper {
+    margin-bottom: 120px;
+    &-label {
+      input {
+        width: 270px;
+        height: 78px;
+      }
+      button {
+        height: 78px;
+      }
+    }
+  }
+}
+@media(max-width: 375px) {
+  .input_wrapper {
+    &-label {
+      input {
+        width: 230px;
+        height: 78px;
+      }
+      button {
+        width: 78px;
+        height: 78px;
+      }
     }
   }
 }
